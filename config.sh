@@ -209,6 +209,18 @@ case "$1" in
 	repo_sync $1
 	;;
 
+"openc-fr")
+	echo DEVICE=zte_p821a10 >> .tmp-config &&
+	echo PRODUCT_NAME=zte_openc >> .tmp-config &&
+	repo_sync openc-fr
+	;;
+
+"openc-ebay")
+	echo DEVICE=zte_p821a10 >> .tmp-config &&
+	echo PRODUCT_NAME=zte_openc >> .tmp-config &&
+	repo_sync openc-ebay
+	;;
+
 "leo-l"|"scorpion-l"|"sirius-l"|"honami-l"|"amami-l"|"tianchi-l"|"flamingo-l"|"eagle-l"|"seagull-l")
 	echo PRODUCT_NAME=$1 | sed 's/..$//' >> .tmp-config &&
 	repo_sync sony-aosp-l
@@ -247,6 +259,8 @@ case "$1" in
 	echo - flame
 	echo - flame-kk
 	echo - flame-l
+	echo - openc-fr
+	echo - openc-ebay
 	echo - "> Raspberry Pi boards"
 	echo - rpi "(Revision B)"
 	echo - rpi2b-l
